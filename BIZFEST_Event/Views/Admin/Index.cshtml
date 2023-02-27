@@ -1,0 +1,82 @@
+﻿@model IEnumerable<UserEvent>
+
+
+@*<input type="button" name="button" asp-controller="Admin" asp-action="" class="btnAddEvent" value="Add Event" />*@
+<button type="button" id="AddEvent" name="button" class="btn btn-primary" data-toggle="ajax-modal" data-target="#addUser" data-url="@Url.Action("Create")">Add Event</button>
+<div class="container">
+    <br />
+    <div style="width:90%; margin:0 auto;">
+        <table id="demoGrid" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0">
+            <thead>
+                <tr style="background: azure;">
+                    <td style="width:200px">Event Name</td>
+                    <td style="width:200px">Description</td>
+                    <td style="width:200px">StartDate</td>
+                    <td style="width:200px">EndDate</td>
+                    <td style="width:200px">Location</td>
+                    <td style="width:200px">OrganizerName</td>
+                    <td style="width:300px">Action</td>
+                </tr>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td style="width:200px">@obj.EventName</td>
+                        <td style="width:200px">@obj.Description</td>
+                        <td style="width:200px">@obj.StartDate</td>
+                        <td style="width:200px">@obj.EndDate</td>
+                        <td style="width:200px">@obj.Location</td>
+                        <td style="width:200px">@obj.OrganizerName</td>
+                        <td style="width:300px">
+                            <button type="button" id="AddEventEdit" name="button" class="btn btn-primary" data-toggle="ajax-modal" data-target="#addUser" data-url="@Url.Action($"EditUser/{@obj.Id}")">Edit</button>
+                            <button name="DeleteItem" class="btn btn-danger" onclick="Delete(@obj.Id)" data-id="@obj.Id">DELETE</button>
+                        </td>
+
+                    </tr>
+                }
+            </thead>
+        </table>
+    </div>
+</div>
+<div id="PalceHolderHere"></div>
+@section Scripts {
+    <script>
+         $(document).on('click', '#AddEventClose', function (e) {            
+            $('#PalceHolderHere').find('.modal').modal('show');
+        });
+
+        $("#AddEvent").click(function () {
+            var url = $(this).data('url');
+            var decodeurl = decodeURIComponent(url);
+            $.get(decodeurl).done(function (data) {
+                $('#PalceHolderHere').html(data);
+                $('#PalceHolderHere').find('.modal').modal('show');
+            })
+        });
+
+        $("#AddEventEdit").click(function () {
+            var url = $(this).data('url');
+            var decodeurl = decodeURIComponent(url);
+            $.get(decodeurl).done(function (data) {
+                $('#PalceHolderHere').html(data);
+                $('#PalceHolderHere').find('.modal').modal('show');
+            })
+        });
+       
+       
+
+            function Delete(Id) {
+                $.ajax({
+                    type: "DELETE",
+                    url: "/Admin/DeleteCustomer",
+                    data: { id: Id },
+                    success: function () {
+                        alert("Delete success!");
+                        location.reload();
+                    },
+                    error: function (data) {
+                        alert("Error: " + data.id);
+                    }
+                });
+            }
+    </script>
+}

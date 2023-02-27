@@ -1,0 +1,177 @@
+﻿@model UserEventDetail
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Our distinct Purpose and our operational expertise across our business model will help realise our vision to grow our business, whilst decoupling our environmental footprint from our growth and increasing our positive social impact. This is captured in the Unilever Sustainable Living Plan." />
+    <meta name="keywords" content="We,Weworldwide,worldwide,worldwide" />
+    <meta name="author" content="Weworldwide" />
+    <link rel="icon" href="Resources/iCON.png" sizes="32x32" />
+    <title>
+       Surat Biz Fest
+    </title>
+    <!-- Bootstrap Core CSS -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Menu CSS -->
+    <link href="plugins/bower_components/typeahead.js-master/dist/typehead-min.css" rel="stylesheet" />
+    <link href="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet" />
+    <!-- morris CSS -->
+    <link href="plugins/bower_components/morrisjs/morris.css" rel="stylesheet" />
+    <!-- animation CSS -->
+    <link href="css/animate.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="plugins/bower_components/custom-select/custom-select.css" rel="stylesheet" type="text/css" />
+    <!-- color CSS -->
+    <link id="theme" href="css/default.css" rel="stylesheet" />
+    <link href="plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link href="bootstrap/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+    <link href="plugins/bower_components/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet" />
+    <link href="plugins/bower_components/timepicker/bootstrap-timepicker.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="plugins/bower_components/ui-timepicker/jquery.ui.timepicker.css?v=0.3.3" type="text/css" />
+
+
+    <style>
+        .dot {
+            height: 25px;
+            width: 25px;
+            background-color: #FF5722;
+            border-radius: 50%;
+            display: inline-block;
+            padding-top: 3px;
+        }
+
+        .plcholder {
+            border: groove;
+        }
+    </style>
+
+    <style>
+        #snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 14px;
+        }
+
+            #snackbar.show {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+    </style>
+    <style>
+        .dot {
+            height: 25px;
+            width: 25px;
+            background-color: #FF5722;
+            border-radius: 50%;
+            display: inline-block;
+            padding-top: 3px;
+        }
+    </style>
+
+</head>
+<body>
+    <form method="post" action="./VisitorTicket.aspx?Id=1" id="form1">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTc2NzkxMTc0MA9kFgICAw9kFgwCAQ8PFgIeBFRleHQFDkRFVkVORFJBIERJWElUZGQCBQ8PFgIfAAUVU0lHTUEgVFJBREUgV0lOR1MgTExQZGQCBw8PFgIfAAUKOTQxNTUwMTkwMmRkAgkPDxYCHwBlZGQCCw8PFgIfAAUHTHVja25vd2RkAg0PDxYCHwBlZGRkiNcviQJjLwZS6pVu2Ne8jdvVQ4kn/3mmAUxN0qYSDyM=" />
+        </div>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F138751B" />
+        </div>
+        <div>
+            <div id="wrapper">
+                <div id="page-wrapper" style="margin: 0px 0 0px 0;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-12 col-md-offset-4" style="margin-top: 10px;">
+                                <div class="white-box" style="background: #ffffff00; padding-left: 40%; width: min-content; box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.0);">
+
+                                    <div class="row bg-title" id="div_print" style="padding: 15px 15px 0px; margin-bottom: 0px;">                                        
+                                        <div class="col-lg-12" style="margin-bottom: 10px; border-left: groove; border-right: groove; border-top: groove; border-bottom: groove">
+                                            <center>
+                                                <img src="~/logo.png" width="300" height="130" />
+
+                                                <h4 class="page-title" style="font-size:20px">
+                                                    <i class="fa fa-user"></i>&nbsp;
+                                                    <span id="txtname">@Model.Name</span>
+                                                </h4>
+
+                                                <h4 class="page-title" style="font-size:15px;margin-top:3px">
+                                                    <span id="date">@Model.StartDate</span>
+                                                </h4>
+
+
+                                                <h4 class="page-title" style="font-size: 15px; margin-top: 3px">
+                                                    <span id="companyname">SIGMA TRADE WINGS LLP</span>
+                                                </h4>
+                                                <h4 class="page-title" style="font-size: 15px; margin-top: 3px">
+                                                    <i class="fa fa-phone"></i>&nbsp;
+                                                    <span id="contact">@Model.ContactNo</span>
+                                                </h4>
+                                                <h4 class="page-title" style="font-size: 15px; margin-top: 3px">
+                                                    <i class="fa fa-envelope"></i>&nbsp;
+                                                    <span id="email"></span>
+                                                </h4>
+
+
+                                                <h4 class="page-title" style="font-size: 15px; margin-top: 3px">
+                                                    <i class="fa fa-map-marker"></i>&nbsp;
+                                                    <span id="txtcity">@Model.Location</span>
+
+
+                                                </h4>
+                                                <h4 class="page-title" style="font-size: 15px; margin-top: 3px;">
+                                                    <span id="txtchapter"></span>
+                                                </h4>
+
+                                                <img src="@Model.BrCodeURL" style="height:145px;width:145px;" />
+                                                          
+                                                <h5 class="page-title" style="border-top-style: ridge;">
+                                                    &nbsp;
+                                                    <div style="margin-top:2px;">Event Venue</div>
+                                                </h5>
+                                                <h5 class="page-title">
+                                                    <span id="Label2">Near, Palsana Chokdi, Khajod, Sarsana, Surat, Gujarat 395007</span>
+                                                    <label></label>
+                                            </center>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>

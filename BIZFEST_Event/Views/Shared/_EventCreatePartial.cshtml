@@ -1,0 +1,44 @@
+﻿@model UserEvent
+
+<div class="container">
+    <div class="title modal " tabindex="-1" id="loginModal"
+         data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Add Event</h2>
+                    <button id="btnUserClose" type="button" class="clsUserClose">×</button>                   
+                </div>
+                <div class="modal-body">
+                    <form method="post" asp-controller="Admin" asp-action="AddEvent">
+                        <div class="form-group" style="padding-top: 20px">
+                            <input class="form-control" type="text" placeholder="EventName" asp-for="@Model.EventName" />
+                        </div>
+
+                        <div class="form-group" style="padding-top: 20px">
+                            <input class="form-control" type="textare" placeholder="Description" asp-for="@Model.Description" />
+                        </div>
+                        <div class="form-group" style="padding-top: 20px">
+                            <input class="form-control" type="date" placeholder="StartDate" asp-for="@Model.StartDate" />
+                        </div>
+                        <div class="form-group" style="padding-top: 20px">
+                            <input class="form-control" type="date" placeholder="EndDate" asp-for="@Model.EndDate" />
+                        </div>
+                        <div class="form-group" style="padding-top: 20px">
+                            <input class="form-control" type="text" placeholder="Location" name="@Model.Location" />
+                        </div>
+                        <div class="form-group" style="padding-top: 20px">
+                            <input class="form-control" type="text" placeholder="OrganizerName" name="@Model.OrganizerName" />
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="submit" class="btn btn-primary col-md-2">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
